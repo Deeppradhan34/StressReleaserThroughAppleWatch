@@ -44,7 +44,7 @@
     heartrate_Array=[[NSMutableArray alloc]init];
     for(int i=0;i<30;i++)
     {
-        static int count=30;
+         static int count=30;
         [heartrate_Array addObject:[NSNumber numberWithInt:count]];
         count=count+5;
         
@@ -66,8 +66,6 @@
     
     if(heartRates>30&&heartRates<=40)//heart beats during sleep, yellow color gives us deep sleep
     {
-        
-       
         
         PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
         PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
@@ -105,9 +103,6 @@
     else if(heartRates>=50&&heartRates<=70)//heart beats for relaxation, blue color helps us to become cooler and calm
     {
         
-        
-       
-        
         PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
         PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
         
@@ -121,10 +116,6 @@
             [lightState setX:x];
             NSNumber *y=[NSNumber numberWithDouble:Y];
             [lightState setY:y];
-            
-            
-            
-            // [lightState setHue:[NSNumber numberWithInt:46920]];
             [lightState setBrightness:[NSNumber numberWithInt:254]];
             [lightState setSaturation:[NSNumber numberWithInt:254]];
             
@@ -148,12 +139,7 @@
         for (PHLight *light in cache.lights.allValues) {
             
             PHLightState *lightState = [[PHLightState alloc] init];
-            
-            //[lightState setHue:[NSNumber numberWithInt:120]];
-            //            NSNumber *x=[NSNumber numberWithDouble:0.3787];
-            //            [lightState setX:x];
-            //            NSNumber *y=[NSNumber numberWithDouble:0.1724];
-            //            [lightState setY:y];
+          
             double X = 0.3787 - ((0.3787 - 0.2703)/(155-70))*(heartRates - 70);
             double Y = 0.1274 - ((0.1724 - 0.1398)/(155-70))*(heartRates - 70);
             NSNumber *x=[NSNumber numberWithDouble:X];
@@ -181,7 +167,7 @@
     
     else if(heartRates>=156)//when doing exercise, web purple gives relaxation
     {
-               PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+         PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
         PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
         
         for (PHLight *light in cache.lights.allValues) {
@@ -193,9 +179,7 @@
             [lightState setX:x];
             NSNumber *y=[NSNumber numberWithDouble:0.1398];
             [lightState setY:y];
-            
-            
-            
+           
             [lightState setBrightness:[NSNumber numberWithInt:100]];
             [lightState setSaturation:[NSNumber numberWithInt:254]];
             
