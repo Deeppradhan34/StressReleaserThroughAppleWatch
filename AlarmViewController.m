@@ -49,10 +49,7 @@
     
     if(([currentDate isEqualToString:chosenDate])&&([currentTime isEqualToString:chosenTime]))
     {
-        
-        
-        //  NSLog(@"The date  equal");
-        
+    
         
         NSLog(@"The date and time is equal");
         [self glowLight];
@@ -84,10 +81,10 @@
             if (errors != nil) {
                 NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
                 
-                // NSLog(@"Response: %@",message);
+             
             }
             
-            // [self.randomLightsButton setEnabled:YES];
+    
         }];
 
 }
