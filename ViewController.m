@@ -55,7 +55,7 @@
     [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
 
      [self enableLocalHeartbeat];
-    //
+   
 }
 
 - (void)localConnection {
@@ -96,35 +96,6 @@
     [self performSelector:@selector(doAuthentication) withObject:nil afterDelay:0.5];
 }
 
-/**
- Checks if we are currently connected to the bridge locally and if not, it will show an error when the error is not already shown.
- */
-//- (void)checkConnectionState {
-//    if (!self.phHueSDK.localConnected) {
-//        // Dismiss modal views when connection is lost
-//      
-//        
-//        // No connection at all, show connection popup
-//        
-////        if (self.noConnectionAlert == nil) {
-////            [self.navigationController popToRootViewControllerAnimated:YES];
-//        
-//            // Showing popup, so remove this view
-//            [self removeLoadingView];
-//            [self showNoConnectionDialog];
-//        
-//    }
-//    else {
-//        // One of the connections is made, remove popups and loading views
-//        
-//        if (self.noConnectionAlert != nil) {
-//            [self.noConnectionAlert dismissWithClickedButtonIndex:[self.noConnectionAlert cancelButtonIndex] animated:YES];
-//            self.noConnectionAlert = nil;
-//        }
-//      //  [self removeLoadingView];
-//        
-//    }
-//}
 
 - (void)checkConnectionState {
     if (!self.phHueSDK.localConnected) {
